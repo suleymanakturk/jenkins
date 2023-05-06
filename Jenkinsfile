@@ -13,7 +13,10 @@ pipeline {
             }
         }
         stage ('Run Container') {
-            sh 'docker run nginx -d -p 80:80 suleymanakturk/jenkinsnginx:latest'
+            steps {
+                sh 'docker run nginx -d -p 80:80 suleymanakturk/jenkinsnginx:latest'
+            }
+            
         }
     }
 }
